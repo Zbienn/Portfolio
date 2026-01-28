@@ -38,10 +38,15 @@
 						<!-- Work -->
 							<article id="projects">
 								<h2 class="major">Projects</h2>
+								<div class="project-filters" style="text-align:center; margin-bottom:2em;">
+									<button class="filter-btn button" data-filter="gamedev">Game Dev</button>
+									<button class="filter-btn button" data-filter="programming">Programming / Full Stack</button>
+								</div>
+
 							
 							
 								<!-- PROJECT EXAMPLE - NEW LAYOUT -->
-								<div class="project-card">
+								<div class="project-card" data-category="gamedev">
 							
 							
 									<!-- IMAGES TOP -->
@@ -75,13 +80,13 @@
 										<p><strong>ROLE:</strong> Game Designer and Programmer</p>
 									</div>
 							
-							
+									<hr />
 							
 								</div>
 								
-								 <hr />
+								 
 
-								 <div class="project-card">
+								 <div class="project-card" data-category="gamedev">
 							
 							
 									<!-- IMAGES TOP -->
@@ -116,12 +121,12 @@
 									<!-- BUTTON -->
 									<a href="https://zbien.itch.io/floodborne" class="project-button" target="_blank" rel="noopener noreferrer">Itch.io</a>
 							
-							
+									<hr />
 								</div>
 
-								<hr />
+								
 
-								 <div class="project-card">
+								 <div class="project-card" data-category="gamedev">
 							
 							
 									<!-- IMAGES TOP -->
@@ -156,7 +161,87 @@
 									<!-- BUTTON -->
 									<a href="https://zbien.itch.io/last-respite" class="project-button" target="_blank" rel="noopener noreferrer">Itch.io</a>
 							
+									<hr />
+								</div>
+
+								<div class="project-card" data-category="programming">
 							
+							
+									<!-- IMAGES TOP -->
+									<div class="project-top-images" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+										<img src="images/fl1.png" class="proj-img" alt="Project Image 1"
+											style="width:100%; max-width:350px; height:auto; min-width:180px;" />
+										<img src="images/fl2.png" class="proj-img" alt="Project Image 2"
+											style="width:100%; max-width:350px; height:auto; min-width:180px;" />
+									</div>
+							
+							
+									<!-- TITLE -->
+									&nbsp<h3 class="project-title">FoodLink</h3>
+							
+							
+									<!-- TECHNOLOGIES -->
+									<div class="project-tech">
+										<img src="images/icons/visualstudio.png" alt="Visual Studio" class="skill-icon" /> visual Studio
+										<img src="images/icons/discord.png" alt="Discord" class="skill-icon" /> Discord
+										<img src="images/icons/github.png" alt="Github" class="skill-icon" /> GitHub
+										<img src="images/icons/jira.png" alt="Jira" class="skill-icon" /> Jira PD
+										<img src="images/icons/confluence.png" alt="Confluence" class="skill-icon" /> Confluence
+									</div>
+							
+							
+									<!-- DESCRIPTION -->
+									&nbsp<div class="project-description">
+										<p><strong>WHAT IT IS:</strong> ASP.NET application for sharing food recipes and recipe management</p>
+										<p><strong>HIGHLIGHTS:</strong> Full-stack food recipe sharing platform featuring secure login and registration, user interaction through likes and comments, and a system for saving and organising recipes into personalised lists.</p>
+										<p><strong>ROLE:</strong> Project Lead, Scrum Master, Full-Stack developer</p>
+									</div>
+							
+							
+									<!-- BUTTON -->
+									<!-- <a href="https://zbien.itch.io/last-respite" class="project-button" target="_blank" rel="noopener noreferrer">Itch.io</a> -->
+							
+									<hr />
+								</div>
+
+								<div class="project-card" data-category="programming">
+							
+							
+									<!-- IMAGES TOP -->
+									<div class="project-top-images" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+										<img src="images/gps1.png" class="proj-img" alt="Project Image 1"
+											style="width:100%; max-width:350px; height:auto; min-width:180px;" />
+										<img src="images/gps2.png" class="proj-img" alt="Project Image 2"
+											style="width:100%; max-width:350px; height:auto; min-width:180px;" />
+									</div>
+							
+							
+									<!-- TITLE -->
+									&nbsp<h3 class="project-title">Java GPS</h3>
+							
+							
+									<!-- TECHNOLOGIES -->
+									<div class="project-tech">
+										<img src="images/icons/java.png" alt="Java" class="skill-icon" /> Java
+										<img src="images/icons/ij.png" alt="IntelliJ" class="skill-icon" /> IntelliJ IDEA
+										<img src="images/icons/discord.png" alt="Discord" class="skill-icon" /> Discord
+									</div>
+							
+							
+									<!-- DESCRIPTION -->
+									&nbsp<div class="project-description">
+										<p><strong>WHAT IT IS:</strong> Java GPS application featuring a custom depth-first search algorithm</p>
+										<p><strong>HIGHLIGHTS:</strong> Java-based GPS application that parses transport networks from CSV files and visualises them using JavaFX. 
+											Features advanced route-finding with a custom depth-first search algorithm supporting backtracking, enabling searches for the fastest or cheapest paths with multi-modal transport filtering (train, bus, boat, walking, and bicycle). 
+											Includes stop and path inspection, proximity searches within a defined number of stops, and analytical graphs showcasing the top five most connected stops.</p>
+										<p><strong>ROLE:</strong> Full-Stack Developer</p>
+									</div>
+							
+							
+									<!-- BUTTON -->
+									<!--<a href="https://zbien.itch.io/last-respite" class="project-button" target="_blank" rel="noopener noreferrer">Itch.io</a> -->
+							
+									<hr />
 								</div>
 							
 							</article>
@@ -180,6 +265,7 @@
 												<td><img src="images/icons/csharp.png" alt="C#" class="skill-icon">C#, 
 													<img src="images/icons/python.png" alt="Python" class="skill-icon">Python, 
 													<img src="images/icons/c++.png" alt="C++" class="skill-icon">C++, 
+													<img src="images/icons/java.png" alt="Java" class="skill-icon">Java, 
 													<img src="images/icons/html.png" alt="HTML" class="skill-icon">HTML, 
 													<img src="images/icons/css.png" alt="CSS" class="skill-icon">CSS, 
 													<img src="images/icons/js.png" alt="JavaScript" class="skill-icon">JavaScript, 
@@ -202,6 +288,8 @@
 											<tr>
 												<td><strong>Tools</strong></td>
 												<td><img src="images/icons/visualstudio.png" alt="Visual Studio" class="skill-icon">Visual Studio, 
+													<img src="images/icons/ij.png" alt="IntelliJ" class="skill-icon">IntelliJ IDEA, 
+													<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm_icon.png" alt="PyCharm" class="skill-icon">PyCharm, 
 													<img src="images/icons/git.png" alt="Git" class="skill-icon">Git, 
 													<img src="images/icons/github.png" alt="GitHub" class="skill-icon">GitHub, 
 													<img src="images/icons/discord.png" alt="Discord" class="skill-icon">Discord, 
@@ -500,6 +588,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/projectFilter.js"></script>
 
 	</body>
 </html>
