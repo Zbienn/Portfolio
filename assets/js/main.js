@@ -301,25 +301,29 @@
 			});
 
 		// Events.
-			$body.on('click', function(event) {
+			$body.on('click', function (event) {
 
-				// Article visible? Hide.
-					if ($body.hasClass('is-article-visible'))
-						$main._hide(true);
+				// If image modal is open, do nothing
+				if (typeof imageModalOpen !== 'undefined' && imageModalOpen)
+					return;
+
+				if ($body.hasClass('is-article-visible'))
+					$main._hide(true);
 
 			});
+
 
 			$window.on('keyup', function(event) {
 
 				switch (event.keyCode) {
 
 					case 27:
-
-						// Article visible? Hide.
-							if ($body.hasClass('is-article-visible'))
-								$main._hide(true);
-
+						if (imageModalOpen)
+							return;
+						if ($body.hasClass('is-article-visible'))
+							$main._hide(true);
 						break;
+
 
 					default:
 						break;
@@ -392,5 +396,60 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
+
+
+	// ---------------- IMAGE MODAL ----------------
+
+	var $imageModal = $('#image-modal');
+	var $imageModalImg = $('#image-modal img');
+	var $imageModalCaption = $('#image-modal .image-caption');
+	var imageModalOpen = false;
+
+	// Open modal when clicking project images
+	$('.project-card .proj-img').on('click', function (event) {
+		event.stopPropagation();
+
+		var src = $(this).attr('src');
+		var caption = $(this).attr('alt') || '';
+
+		$imageModalImg.attr('src', src);
+		$imageModalCaption.text(caption);
+
+		$imageModal.addClass('visible');
+		$('body').css('overflow', 'hidden');
+		imageModalOpen = true;
+	});
+
+	// Close modal
+	function closeImageModal() {
+		$imageModal.removeClass('visible');
+
+		setTimeout(function () {
+			$imageModalImg.attr('src', '');
+			$('body').css('overflow', '');
+			imageModalOpen = false;
+		}, 300); // mesmo tempo da transição CSS
+	}
+
+
+	// Click outside image closes only modal
+	$imageModal.on('click', function (event) {
+		event.stopPropagation();
+		closeImageModal();
+	});	
+
+	// Prevent clicks on image from bubbling
+	$imageModal.find('.image-modal-content').on('click', function (event) {
+		event.stopPropagation();
+	});
+
+	// ESC behaviour override
+	$(window).on('keyup', function (event) {
+		if (event.keyCode === 27 && imageModalOpen) {
+			closeImageModal();
+			event.stopPropagation();
+		}
+	});
+
 
 })(jQuery);
